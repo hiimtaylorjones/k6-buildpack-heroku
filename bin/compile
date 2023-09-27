@@ -6,5 +6,6 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 
 echo "Installing K6 Buildpack....."
+apt-get update
 apt-get install k6
 echo "Done!"
