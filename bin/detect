@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "K8 Buildpack!"
+exit 0
