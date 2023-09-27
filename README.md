@@ -1,3 +1,3 @@
-# K8 Buildpack for Heroku!
+# K6 Buildpack for Heroku!
 
 ITS HERE
