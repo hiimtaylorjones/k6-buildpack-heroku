@@ -10,7 +10,7 @@ VERSION="0.46.0"
 
 # Buildpack URL
 ARCHIVE_NAME=k6-v${VERSION}-linux-amd64
-FILE_NAME=${ARCHIVE_NAME}.tar.bz2
+FILE_NAME=${ARCHIVE_NAME}.tar.gz
 BUILDPACK_K6_PACKAGE=https://github.com/grafana/k6/releases/download/v${VERSION}/${FILE_NAME}
 
 mkdir -p $CACHE_DIR
