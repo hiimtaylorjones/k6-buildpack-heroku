@@ -19,14 +19,14 @@ if ! [ -e $CACHE_DIR/$FILE_NAME ]; then
   curl $BUILDPACK_K6_PACKAGE -L -s -o $CACHE_DIR/$FILE_NAME
 fi
 
-echo "-----> Extracting K6 ${VERSION} binaries to ${BUILD_DIR}/vendor/k6"
+echo "-----> Extracting K6 ${VERSION} binaries to ${BUILD_DIR}/bin/k6"
 mkdir -p $CACHE_DIR/$ARCHIVE_NAME
-mkdir -p $BUILD_DIR/vendor
+mkdir -p $BUILD_DIR/bin
 tar xzf $CACHE_DIR/$FILE_NAME -C $CACHE_DIR
-mv $CACHE_DIR/$ARCHIVE_NAME $BUILD_DIR/vendor/k6
+mv $CACHE_DIR/$ARCHIVE_NAME $BUILD_DIR/bin/k6
 
 echo "-----> exporting PATH and LIBRARY_PATH"
 PROFILE_PATH="$BUILD_DIR/.profile.d/k6.sh"
 mkdir -p $(dirname $PROFILE_PATH)
-echo 'export PATH="$PATH:$HOME/vendor/k6/bin"' >> $PROFILE_PATH
-echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:vendor/k6/lib"' >> $PROFILE_PATH
+echo 'export PATH="$PATH:$HOME/bin/k6/bin"' >> $PROFILE_PATH
+echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:bin/k6/lib"' >> $PROFILE_PATH
